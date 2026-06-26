@@ -1,17 +1,30 @@
-# Transform Algebra
+# Trajectory-Constrained Transform Algebra (TCTA)
 
-Transform Algebra is a field of mathematics that focuses on the transformations of objects and their properties. It provides a framework for understanding the underlying axioms that govern these transformations.
+> Mathematical foundations for state transformations, execution-trace classification, invariant projection, and constrained trajectory evolution.
 
-## Axioms of Transform Algebra
+## Vision
 
-1. **Closure**: If `A` and `B` are elements of the set, then the transformation of `A` and `B` is also an element of the set.
-2. **Associativity**: For all elements `A`, `B`, and `C` in the set, the equation (A * B) * C = A * (B * C) holds.
-3. **Identity Element**: There exists an element `I` such that for every element `A`, the equation I * A = A * I = A holds.
-4. **Inverse Element**: For every element `A`, there exists an element `B` such that A * B = B * A = I, where `I` is the identity element.
-5. **Distributivity**: For all elements `A`, `B`, and `C`, the equation A * (B + C) = A * B + A * C holds.
+This repository is the canonical implementation and reference for Trajectory-Constrained Transform Algebra (TCTA).
 
-## Example Transformations
+Rather than treating computation as unconstrained exploration through state space, TCTA investigates whether execution traces possess prefix-stable structural invariants that permit early trajectory-family identification and search-space reduction.
 
-- **Translation**: Moving an object from one place to another.
-- **Rotation**: Turning an object around a specific point.
-- **Scaling**: Changing the size of an object while maintaining its proportions.
+The long-term research program is organized into:
+
+- Volume 0 — Foundations and Research Roadmap
+- Volume I — Mathematical Foundations
+- Volume II — OGSI (Invariant Projection)
+- Volume III — HDRP (Trajectory Continuation)
+- Volume IV — Computational Architecture
+- Volume V — Beyond CMOS / Wave Compute
+- Volume VI — Experimental Validation
+- Volume VII — Applications
+- Volume VIII — Open Problems
+
+## Core Components
+
+- TCTA — Trajectory-Constrained Transform Algebra
+- OGSI — Orthogonal Gestalt Symmetry Identification
+- HDRP — Hartman Dual-Register Predictor
+- QSON — Trace Ledger and Verification
+
+The repository will evolve from a collection of mathematical notes into a complete research and implementation corpus.
