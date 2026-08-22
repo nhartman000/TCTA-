@@ -1,17 +1,113 @@
-# Transform Algebra
+# Trajectory-Constrained Transform Algebra (TCTA)
 
-Transform Algebra is a field of mathematics that focuses on the transformations of objects and their properties. It provides a framework for understanding the underlying axioms that govern these transformations.
+**Trajectory-Constrained Transform Algebra (TCTA)** is a framework developed by **Nicholas Hartman / American Milestone Inc.** for representing transformation as ordered, constraint-bounded state trajectories. Rather than treating objects, agents, or semantic categories as primitives, TCTA begins from organized state representations and asks how transformations remain admissible through time, how trajectory families become identifiable from incomplete traces, and how that structure can reduce future search.
 
-## Axioms of Transform Algebra
+## Core progression
 
-1. **Closure**: If `A` and `B` are elements of the set, then the transformation of `A` and `B` is also an element of the set.
-2. **Associativity**: For all elements `A`, `B`, and `C` in the set, the equation (A * B) * C = A * (B * C) holds.
-3. **Identity Element**: There exists an element `I` such that for every element `A`, the equation I * A = A * I = A holds.
-4. **Inverse Element**: For every element `A`, there exists an element `B` such that A * B = B * A = I, where `I` is the identity element.
-5. **Distributivity**: For all elements `A`, `B`, and `C`, the equation A * (B + C) = A * B + A * C holds.
+```text
+Data → Form (Information) → Transform → System → Memory → Awareness → Intelligence
+```
 
-## Example Transformations
+The computational core is organized as:
 
-- **Translation**: Moving an object from one place to another.
-- **Rotation**: Turning an object around a specific point.
-- **Scaling**: Changing the size of an object while maintaining its proportions.
+```text
+State Representation SR
+        ↓
+Transform T
+        ↓
+Trajectory τ
+        ↓
+Prefix Trace τq
+        ↓
+Invariant Projection Γ
+        ↓
+Orthogonal Gestalt Symmetry Identification Ψ
+        ↓
+Resolved Trajectory Family 𝒯G
+        ↓
+HDRP Φ
+        ↓
+Constrained Continuation
+```
+
+## State and trajectory model
+
+A state representation is expressed as:
+
+\[
+SR=(\mathbf{s},\mathcal{D},\mathcal{C})
+\]
+
+where \(\mathbf{s}\) is the current state representation, \(\mathcal{D}\) is the active domain/projection context, and \(\mathcal{C}\) is the active constraint/container geometry.
+
+A transform maps one valid state representation to another:
+
+\[
+T:SR_1\rightarrow SR_2
+\]
+
+An ordered transform sequence forms a trajectory:
+
+\[
+\tau=[T_1,T_2,\ldots,T_n]
+\]
+
+TCTA studies trajectories constrained to an admissible space \(\Omega(\mathcal{C})\), and tests whether an incomplete prefix \(\tau_q=\tau_{1:k}\) can contain a stable invariant signature sufficient to identify a trajectory family before the full trajectory completes.
+
+## OGSI
+
+**OGSI — Orthogonal Gestalt Symmetry Identification** is represented by the operator \(\Psi\). With explicit invariant extraction, the family-resolution sequence is:
+
+\[
+\tau_q\xrightarrow{\Gamma}G\xrightarrow{\Psi}\mathcal{T}_G
+\]
+
+The resulting trajectory family constrains which transforms remain admissible for continuation.
+
+## HDRP
+
+The **Hartman Dual-Register Predictor (HDRP)** is a localized prediction primitive that preserves a present-state register \(R_0\) and previous-state register \(R_{-1}\). Its local trajectory delta is:
+
+\[
+\mathbf{T}_t=R_0-R_{-1}
+\]
+
+and its bounded forward projection is:
+
+\[
+\mathbf{O}_t=\tanh\left(R_0+g_t\alpha\mathbf{T}_t\right)
+\]
+
+HDRP is downstream of TCTA/OGSI: it predicts within a trajectory family already constrained by prior state, invariant structure, and admissible-space reduction.
+
+## Formal research status
+
+The current formal core distinguishes hypotheses, assumptions, conditional theorems, and empirical metrics. In particular:
+
+- **H1 — Prefix Stability of Invariants** tests whether \(\Gamma(\tau_{1:k})=\Gamma(\tau)\) for some proper prefix \(k<n\).
+- **H2 — Family Separability / Discriminability** bounds cross-family invariant collision by \(\epsilon\).
+- Search reduction is measured by
+
+\[
+R=\frac{\mathcal{S}(\Omega(\mathcal{C}))}{\mathcal{S}(\mathcal{T}_G)}
+\]
+
+with correctness retention evaluated through false-negative pruning and ground-truth trajectory retention.
+
+## Technical documentation
+
+- [`docs/VOLUME_1_TECHNICAL_AND_MANAGEMENT.md`](docs/VOLUME_1_TECHNICAL_AND_MANAGEMENT.md) — canonical Volume 1 narrative and formal core
+- [`docs/ARCHITECTURE.md`](docs/ARCHITECTURE.md) — compact system and execution architecture
+- [`docs/OGSI.md`](docs/OGSI.md) — Orthogonal Gestalt Symmetry Identification and family resolution
+- [`docs/HDRP.md`](docs/HDRP.md) — Hartman Dual-Register Predictor equations and role
+- [`docs/EVALUATION.md`](docs/EVALUATION.md) — falsifiable metrics and benchmarking framework
+- [`spec/transform_algebra_axioms_v1.md`](spec/transform_algebra_axioms_v1.md) — TCTA formal-core specification retained at the historical path
+- [`docs/PROVENANCE.md`](docs/PROVENANCE.md) — pre-existing TCTA/HDRP baseline and IP-boundary notes
+
+## Scope and IP boundary
+
+This repository documents Nicholas Hartman / American Milestone Inc. TCTA and HDRP material. It does **not** incorporate unpublished third-party research, private correspondence, or later collaborative synthesis.
+
+## Repository status
+
+The repository currently emphasizes specification, provenance, and evaluation structure. Components described by the canonical theory should not be interpreted as empirically validated merely because they are documented here; implementation and benchmark evidence are tracked separately from the formal specification.
