@@ -94,12 +94,20 @@ R=\frac{\mathcal{S}(\Omega(\mathcal{C}))}{\mathcal{S}(\mathcal{T}_G)}
 
 with correctness retention evaluated through false-negative pruning and ground-truth trajectory retention.
 
-## Canonical technical volume
+## Technical documentation
 
-See [`docs/VOLUME_1_TECHNICAL_AND_MANAGEMENT.md`](docs/VOLUME_1_TECHNICAL_AND_MANAGEMENT.md) for the current canonical Volume 1 narrative and formal core.
-
-See [`docs/PROVENANCE.md`](docs/PROVENANCE.md) for the pre-existing TCTA/HDRP technical baseline and repository provenance notes.
+- [`docs/VOLUME_1_TECHNICAL_AND_MANAGEMENT.md`](docs/VOLUME_1_TECHNICAL_AND_MANAGEMENT.md) — canonical Volume 1 narrative and formal core
+- [`docs/ARCHITECTURE.md`](docs/ARCHITECTURE.md) — compact system and execution architecture
+- [`docs/OGSI.md`](docs/OGSI.md) — Orthogonal Gestalt Symmetry Identification and family resolution
+- [`docs/HDRP.md`](docs/HDRP.md) — Hartman Dual-Register Predictor equations and role
+- [`docs/EVALUATION.md`](docs/EVALUATION.md) — falsifiable metrics and benchmarking framework
+- [`spec/transform_algebra_axioms_v1.md`](spec/transform_algebra_axioms_v1.md) — TCTA formal-core specification retained at the historical path
+- [`docs/PROVENANCE.md`](docs/PROVENANCE.md) — pre-existing TCTA/HDRP baseline and IP-boundary notes
 
 ## Scope and IP boundary
 
 This repository documents Nicholas Hartman / American Milestone Inc. TCTA and HDRP material. It does **not** incorporate unpublished third-party research, private correspondence, or later collaborative synthesis.
+
+## Repository status
+
+The repository currently emphasizes specification, provenance, and evaluation structure. Components described by the canonical theory should not be interpreted as empirically validated merely because they are documented here; implementation and benchmark evidence are tracked separately from the formal specification.
